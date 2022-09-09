@@ -1,4 +1,5 @@
 import subprocess
+
 from loguru import logger
 
 
@@ -17,5 +18,5 @@ def get_bssid_darwin():
 
     for line in wifi_details:
         if line.strip().startswith("BSSID"):
-            logger.debug("BSSID candidate is {}".format(line.strip()))
+            logger.debug(f"BSSID candidate is {line.strip()}")
             return line.strip().split(":", 1)[1].strip()

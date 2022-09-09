@@ -1,6 +1,8 @@
 """Command-line interface."""
-import click
 import time
+
+import click
+from get_bssid import get_bssid
 from is_activetime import is_activetime
 from is_workday import is_workday
 
@@ -24,7 +26,10 @@ def main() -> None:
             if not is_activetime(schedule):
                 break
             # get MAC
+            bssid = get_bssid()
             # update SLACK status for 10 minutes
+            get_slack_status()
+            update_slack_status()
         # sleep for 4 minutes
         time.sleep(4 * 60)  # TODO get from config
 

@@ -1,4 +1,5 @@
 from sys import platform
+
 from get_bssid_darwin import get_bssid_darwin
 
 
@@ -20,5 +21,5 @@ def get_bssid(os=platform.lower(), interface=""):
         raise Exception("Sorry, platform Windows is not supported yet :-(")
         return get_bssid_windows(interface)
     else:
-        raise Exception("Sorry, platform '{}' is not supported".format(str(os)))
+        raise Exception(f"Sorry, platform '{str(os)}' is not supported")
         return False  # I love to watch the world burn :)

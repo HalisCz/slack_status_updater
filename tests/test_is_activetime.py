@@ -1,7 +1,10 @@
-import pytest
-from datetime import datetime
 import json
+from datetime import datetime
+
+import pytest
+
 from slack_status_updater import is_activetime
+
 
 SCHEDULE_SAMPLE = json.loads(
     """
