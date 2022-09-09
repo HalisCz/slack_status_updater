@@ -46,7 +46,7 @@ xdoctest = {extras = ["colors"], version = ">=0.15.10"}
 myst-parser = {version = ">=0.16.1"}
 
 [tool.poetry.scripts]
-slack_status_updater = "slack_status_updater.console:main"
+slack_status_updater = "slack_status_updater.__main__:main"
 
 [tool.coverage.paths]
 source = ["src", "*/site-packages"]
